@@ -1,0 +1,20 @@
+<ion-content>
+  <ion-row padding>
+    <ion-col col-8>
+      Current Revenue
+    </ion-col>
+    <ion-col col-4 [class.profitable]="currentEvent?.revenue > 0" [class.no-profit]="currentEvent?.revenue < 0">
+      {{currentEvent?.revenue}}
+    </ion-col>
+  </ion-row>
+  <ion-card>
+    <ion-card-header>
+      {{currentEvent?.name}}
+    </ion-card-header>
+    <ion-card-content>
+      <p>Ticket: <strong>${{currentEvent?.price}}</strong></p>
+      <p>Date: <strong>{{currentEvent?.date}}</strong></p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
