@@ -16,4 +16,7 @@ export class HomePage {
   goToList(): void {
     this.navCtrl.push('EventListPage')
   }
+  goToTermos(): void {
+    this.navCtrl.push('TermosPage')
+  }
 }

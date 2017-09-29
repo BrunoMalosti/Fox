@@ -3,9 +3,17 @@
     <ion-title>Profile</ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="logOut()">
-  <ion-icon name="log-out"></ion-icon>
-  </button>
+<ion-icon name="log-out"></ion-icon>
+</button>
     </ion-buttons>
+
+<!--     <ion-buttons begin>
+      <button ion-button icon-only (click)="logOut()">
+<ion-icon name="log-out"></ion-icon>
+</button>
+    </ion-buttons> -->
+
+
   </ion-navbar>
 </ion-header>
 <ion-content padding>
@@ -13,6 +21,8 @@
     <ion-list-header>
       Personal Information
     </ion-list-header>
+    <!-- CAMPO DO NOME -->
+
     <ion-item (click)="updateName()">
       <ion-grid>
         <ion-row>
@@ -20,22 +30,37 @@
             Name
           </ion-col>
           <ion-col col-6 *ngIf="userProfile?.firstName ||
-  userProfile?.lastName">
+userProfile?.lastName">
             {{userProfile?.firstName}} {{userProfile?.lastName}}
           </ion-col>
           <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.firstName">
             <span>
-  Tap here to edit.
-  </span>
+Tap here to edit.
+</span>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
+
+    <!-- CAMPO DO ANIVERSÁRIO -->
+
     <ion-item>
       <ion-label class="dob-label">Date of Birth</ion-label>
       <ion-datetime displayFormat="MMM D, YYYY" pickerFormat="D MMM YYYY" [(ngModel)]="birthDate" (ionChange)="updateDOB(birthDate)">
       </ion-datetime>
     </ion-item>
+
+    <!-- CAMPO DE TESTE DATE -->
+
+    <ion-item>
+      <ion-label class="dob-label">Date de sl</ion-label>
+      <ion-datetime displayFormat="MMM D, YYYY" pickerFormat="D MMM YYYY" [(ngModel)]="sl" (ionChange)="updateSL(sl)">
+      </ion-datetime>
+    </ion-item>
+
+
+    <!-- CAMPO DO EMAIL -->
+
     <ion-item (click)="updateEmail()">
       <ion-grid>
         <ion-row>
@@ -47,13 +72,17 @@
           </ion-col>
           <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.email">
             <span>
-  Tap here to edit.
-  </span>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-item>
-    <ion-item (click)="updatePassword()">
+Tap here to edit.
+</span>
+</ion-col>
+</ion-row>
+</ion-grid>
+</ion-item>
+
+
+<!-- CAMPO DA SENHA -->
+
+<ion-item (click)="updatePassword()">
       <ion-grid>
         <ion-row>
           <ion-col col-6>
@@ -61,11 +90,69 @@
           </ion-col>
           <ion-col col-6 class="placeholder-profile">
             <span>
-  Tap here to edit.
-  </span>
+Tap here to edit.
+</span>
           </ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
+
+ 
+    <ion-item (click)="updateCPF()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            CPF
+          </ion-col>
+          <ion-col col-6 *ngIf="userProfile?.cpf">
+            {{userProfile?.cpf}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.cpf">
+            <span>
+Tap here to edit.
+</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+
+    <ion-item (click)="updateRG()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            RG
+          </ion-col>
+          <ion-col col-6 *ngIf="userProfile?.rg">
+            {{userProfile?.rg}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.rg">
+            <span>
+Tap here to edit.
+</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+    <ion-item (click)="updateTEL1()">
+      <ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            Telefone 1
+          </ion-col>
+          <ion-col col-6 *ngIf="userProfile?.tel1">
+            {{userProfile?.tel1}}
+          </ion-col>
+          <ion-col col-6 class="placeholder-profile" *ngIf="!userProfile?.tel1">
+            <span>
+Tap here to edit.
+</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+
+
   </ion-list>
 </ion-content>

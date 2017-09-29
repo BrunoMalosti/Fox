@@ -10,9 +10,8 @@ export class EventCreatePage {
   constructor(public navCtrl: NavController, public eventProvider:
     EventProvider) { }
 
-  createEvent(eventName: string, eventDate: string, eventPrice: number,
-    eventCost: number): void {
-    this.eventProvider.createEvent(eventName, eventDate, eventPrice, eventCost)
+  createEvent(eventName: string, eventDate: string, eventDate1: string, eventPrice: number): void {
+    this.eventProvider.createEvent(eventName, eventDate, eventDate1, eventPrice)
       .then(newEvent => {
         this.navCtrl.pop();
       })

@@ -2,27 +2,29 @@ import 'rxjs/add/operator/map';
 import { Injectable } from '@angular/core';
 import firebase from 'firebase';
 
+
 @Injectable()
 
 export class EventProvider {
   public eventListRef: firebase.database.Reference;
+  
   constructor() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         this.eventListRef = firebase.database()
-          .ref(`/userProfile/${user.uid}/eventList`);
-      }
+          .ref(`/eventList`);
+          //.ref(`/eventList/${user.uid}`);
+        }
     });
   }
 
-  createEvent(eventName: string, eventDate: string, eventPrice: number,
-    eventCost: number): firebase.Promise<any> {
+  createEvent(eventName: string, eventDate: string, eventDate1: string, eventPrice: number): firebase.Promise<any> {
     return this.eventListRef.push({
       name: eventName,
-      date: eventDate,
+      datei: eventDate,
+      datef: eventDate1,
       price: eventPrice * 1,
-      cost: eventCost * 1,
-      revenue: eventCost * -1
+      UID_DONO: firebase.auth().currentUser.uid
     });
   }
 

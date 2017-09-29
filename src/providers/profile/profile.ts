@@ -10,13 +10,14 @@ import firebase from 'firebase';
 */
 @Injectable()
 export class ProfileProvider {
-  public userProfile: firebase.database.Reference;
+  public userProfile: firebase.database.Reference;public teste: firebase.database.Reference;
   public currentUser: firebase.User;
   constructor() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         this.currentUser = user;
         this.userProfile = firebase.database().ref(`/userProfile/${user.uid}`);
+        this.teste = firebase.database().ref(`/userProfile`);
       }
     });
   }
@@ -32,6 +33,23 @@ export class ProfileProvider {
   updateDOB(birthDate: string): firebase.Promise<any> {
     return this.userProfile.update({ birthDate });
   }
+
+  updateSL(sl: string): firebase.Promise<any> {
+    return this.userProfile.update({ sl });
+  }
+
+  updateCPF(cpf: string): firebase.Promise<any> {
+    return this.userProfile.update({ cpf });
+  }
+
+  updateRG(rg: string): firebase.Promise<any> {
+    return this.userProfile.update({ rg });
+  }
+
+  updateTEL1(tel1: string): firebase.Promise<any> {
+    return this.userProfile.update({ tel1 });
+  }
+
 
   updateEmail(newEmail: string, password: string): firebase.Promise<any> {
     const credential = firebase.auth.EmailAuthProvider
@@ -59,4 +77,9 @@ export class ProfileProvider {
         console.error(error);
       });
   }
+
+  getNome(uid: string): firebase.database.Reference {
+    return this.teste.child(uid);
+  }
+
 }

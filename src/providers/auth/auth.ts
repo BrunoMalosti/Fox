@@ -30,4 +30,5 @@ con
       firebase.database().ref(`/userProfile/${userId}`).off();
       return firebase.auth().signOut();
       }
+
 }

@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>
-      Create an Account
+      Criar conta
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -10,26 +10,40 @@
   <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
     <ion-item>
       <ion-label stacked>Email</ion-label>
-      <ion-input formControlName="email" type="email" placeholder="Your email address" [class.invalid]="!signupForm.controls.email.valid &&
+      <ion-input formControlName="email" type="email" placeholder="exemplo@exemplo.com" [class.invalid]="!signupForm.controls.email.valid &&
   signupForm.controls.email.dirty">
       </ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid &&
   signupForm.controls.email.dirty">
-      <p>Please enter a valid email.</p>
+      <p>Porfavor, entre com um formato válido de email.</p>
     </ion-item>
+
     <ion-item>
-      <ion-label stacked>Password</ion-label>
-      <ion-input formControlName="password" type="password" placeholder="Your password" [class.invalid]="!signupForm.controls.password.valid &&
+      <ion-label stacked>Senha</ion-label>
+      <ion-input formControlName="password" type="password" placeholder="******" [class.invalid]="!signupForm.controls.password.valid &&
   signupForm.controls.password.dirty">
       </ion-input>
     </ion-item>
+
     <ion-item class="error-message" *ngIf="!signupForm.controls.password.valid &&
-  signupForm.controls.password.dirty">
-      <p>Your password needs more than 6 characters.</p>
+    signupForm.controls.password.dirty">
+      <p>Sua senha deve conter ao menos 6 caracteres.</p>
     </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Confirma Senha</ion-label>
+      <ion-input formControlName="rpassword" type="password" placeholder="******" [class.invalid]="!signupForm.controls.password.valid &&
+  signupForm.controls.password.dirty">
+      </ion-input>
+    </ion-item>
+
+    <ion-item class="error-message" *ngIf="!(signupForm.value.password == signupForm.value.rpassword)">
+      <p>Suas senhas devem conferir.</p>
+    </ion-item>
+
     <button ion-button block type="submit" [disabled]="!signupForm.valid">
-  Create an Account
+  Cadastre-se
   </button>
   </form>
 </ion-content>

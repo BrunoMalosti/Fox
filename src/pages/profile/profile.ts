@@ -65,6 +65,80 @@ export class ProfilePage {
   }
 
 
+  updateSL(sl: string): void {
+    this.profileProvider.updateSL(sl);
+  }
+
+
+  updateCPF(): void {
+    const alert: Alert = this.alertCtrl.create({
+      message: "Your first name & last name",
+      inputs: [
+        {
+          name: 'cpf',
+          placeholder: 'seucpf',
+          value: this.userProfile.cpf
+        }],
+      buttons: [
+        { text: 'Cancel' },
+        {
+          text: 'Save',
+          handler: data => {
+            this.profileProvider.updateCPF(data.cpf);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+
+  updateRG(): void {
+    const alert: Alert = this.alertCtrl.create({
+      message: "Your first name & last name",
+      inputs: [
+        {
+          name: 'rg',
+          placeholder: 'seurg',
+          value: this.userProfile.rg
+        }],
+      buttons: [
+        { text: 'Cancel' },
+        {
+          text: 'Save',
+          handler: data => {
+            this.profileProvider.updateRG(data.rg);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+
+  updateTEL1(): void {
+    const alert: Alert = this.alertCtrl.create({
+      message: "Your first name & last name",
+      inputs: [
+        {
+          name: 'tel1',
+          placeholder: 'tel1',
+          value: this.userProfile.tel1
+        }],
+      buttons: [
+        { text: 'Cancel' },
+        {
+          text: 'Save',
+          handler: data => {
+            this.profileProvider.updateTEL1(data.tel1);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+
   updateEmail(): void {
     let alert: Alert = this.alertCtrl.create({
       inputs: [

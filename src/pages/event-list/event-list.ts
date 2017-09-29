@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { EventProvider } from '../../providers/event/event';
+import { ProfileProvider } from '../../providers/profile/profile';
+
+
 @IonicPage()
 @Component({
   selector: 'page-event-list',
@@ -9,17 +12,24 @@ import { EventProvider } from '../../providers/event/event';
 export class EventListPage {
   public eventList: Array<any>;
   constructor(public navCtrl: NavController, public eventProvider:
-    EventProvider) { }
+    EventProvider, public profileProvider: ProfileProvider) { }
+
+    
+
 
   ionViewDidLoad() {
-    this.eventProvider.getEventList().on('value', eventListSnapshot => {
+      this.eventProvider.getEventList().on('value', eventListSnapshot => {
       this.eventList = [];
       eventListSnapshot.forEach(snap => {
+        console.log(eventListSnapshot.toJSON);
         this.eventList.push({
           id: snap.key,
           name: snap.val().name,
           price: snap.val().price,
-          date: snap.val().date
+          datei: snap.val().datei,
+          datef: snap.val().datef,
+          Uid: snap.val().UID_DONO
+          
         });
         return false;
       });
