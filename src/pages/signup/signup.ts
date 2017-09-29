@@ -10,7 +10,7 @@ import {
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthProvider } from '../../providers/auth/auth';
 import { EmailValidator } from '../../validators/email';
-import { HomePage } from '../home/home';
+//import { HomePage } from '../home/home';
 @IonicPage()
 @Component({
   selector: 'page-signup',
@@ -26,18 +26,23 @@ export class SignupPage {
       email: ['', Validators.compose([Validators.required,
       EmailValidator.isValid])],
       password: ['', Validators.compose([Validators.minLength(6),
+      Validators.required])],
+      rpassword: ['', Validators.compose([Validators.minLength(6),
       Validators.required])]
     });
   }
   signupUser(): void {
+    if(!(this.signupForm.value.password == this.signupForm.value.rpassword))
+      return;
     if (!this.signupForm.valid) {
       console.log(`Need to complete the form: ${this.signupForm.value}`);
     } else {
       const email: string = this.signupForm.value.email;
       const password: string = this.signupForm.value.password;
+     // const rpassword: string = this.signupForm.value.rpassword;
       this.authProvider.signupUser(email, password).then(user => {
         this.loading.dismiss().then(() => {
-          this.navCtrl.setRoot(HomePage);
+          this.navCtrl.setRoot('ProfilePage');
         });
       }, error => {
         this.loading.dismiss().then(() => {

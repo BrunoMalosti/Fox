@@ -1,38 +1,38 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title>Log In</ion-title>
+    <ion-title>Login</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
-  <img src="http://placehold.it/300x100" />
+  <p style = "text-align: center"><img src="/assets/Logo/logotipo.png" class = "logo" /></p>
   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
     <ion-item>
       <ion-label stacked>Email</ion-label>
-      <ion-input formControlName="email" type="email" placeholder="Your email address" [class.invalid]="!loginForm.controls.email.valid &&
+      <ion-input formControlName="email" type="email" placeholder="exemplo@exemplo.com" [class.invalid]="!loginForm.controls.email.valid &&
   loginForm.controls.email.dirty">
       </ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid &&
   loginForm.controls.email.dirty">
-      <p>Please enter a valid email address.</p>
+      <p>Porfavor, entre com um formato válido de email.</p>
     </ion-item>
     <ion-item>
-      <ion-label stacked>Password</ion-label>
-      <ion-input formControlName="password" type="password" placeholder="Your password" [class.invalid]="!loginForm.controls.password.valid &&
+      <ion-label stacked>Senha</ion-label>
+      <ion-input formControlName="password" type="password" placeholder="******" [class.invalid]="!loginForm.controls.password.valid &&
   loginForm.controls.password.dirty"></ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid &&
   loginForm.controls.password.dirty">
-      <p>Your password needs more than 6 characters.</p>
+      <p>Sua senha deve conter ao menos 6 caracteres.</p>
     </ion-item>
     <button ion-button block type="submit" [disabled]="!loginForm.valid">
-  Log In
+      Entrar
   </button>
   </form>
   <button ion-button block clear (click)="goToSignup()">
-  Create a new account
+  Cadastre-se
   </button>
   <button ion-button block clear (click)="goToResetPassword()">
-  I forgot my password :(
+  Esqueci minha senha :(
   </button>
 </ion-content>
