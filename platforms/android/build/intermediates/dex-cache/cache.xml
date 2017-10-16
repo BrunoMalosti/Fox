@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\bruno\GrupoFoxStop\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\libs\internal_impl-24.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
+        <dex dex="C:\Users\bruno\GrupoFoxStop\platforms\android\build\intermediates\pre-dexed\debug\internal_impl-24.1.1_cd16f1e794b95d4da1133bdee33231fb15f9afc4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bruno\GrupoFoxStop\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6d7d803871e3203465f71a163e7af104f807b446">
+        <dex dex="C:\Users\bruno\GrupoFoxStop\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.1.1_84df06ab7b97d55120c6612605980ab614e657dc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bruno\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.1.1\support-annotations-24.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3af19f153122737b372622fa6c81dd11a1c6b999">
+        <dex dex="C:\Users\bruno\GrupoFoxStop\platforms\android\build\intermediates\pre-dexed\debug\support-annotations-24.1.1_c82f49425c90c7d7c8eff2974dabe040f2e5aef7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bruno\GrupoFoxStop\platforms\android\build\intermediates\exploded-aar\org.apache.cordova\CordovaLib\6.2.3\debug\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7a1530ac850543228ac856fe951d258efe29f918">
+        <dex dex="C:\Users\bruno\GrupoFoxStop\platforms\android\build\intermediates\pre-dexed\debug\CordovaLib-6.2.3-debug_5c3d11e8eb09e6cccb83cab89eaf73e87b0fc509.jar" />
+    </item>
+
+</items>
